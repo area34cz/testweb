@@ -1,0 +1,15 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #0a0f1a; color: #fff; }
+nav { background: #111; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+nav .logo { font-size: 1.5rem; color: #66b2ff; }
+nav ul { list-style: none; display: flex; gap: 1rem; }
+nav ul li a { color: #fff; text-decoration: none; transition: color 0.3s; }
+nav ul li a:hover { color: #66b2ff; }
+.container, .page { padding: 3rem; text-align: center; }
+.container h1 { font-size: 3rem; margin-bottom: 1rem; color: #66b2ff; }
+.buttons a { display: inline-block; margin: 1rem; padding: 1rem 2rem; background: #66b2ff; color: #000; border-radius: 8px; text-decoration: none; }
+footer { text-align: center; padding: 2rem; color: #aaa; background: #111; position: fixed; bottom: 0; width: 100%; }
+#loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0f1a; display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.spinner { border: 6px solid #1b263b; border-top: 6px solid #66b2ff; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
