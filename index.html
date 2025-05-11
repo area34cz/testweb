@@ -1,57 +1,148 @@
-
 <!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>DarkRP</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0f1a;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1608874968024-d2b80920a75a?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      filter: brightness(0.3);
+    }
+
+    #loader {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0f1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spinner {
+      border: 6px solid #1b263b;
+      border-top: 6px solid #66b2ff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      opacity: 0;
+      animation: fadeIn 1s forwards 0.5s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .container h1 {
+      font-size: 4rem;
+      color: #66b2ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #000;
+    }
+
+    .container p {
+      font-size: 1.2rem;
+      color: #e0e8f0;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .buttons a {
+      padding: 1rem 2rem;
+      background-color: #66b2ff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .buttons a:hover {
+      background-color: #5599dd;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-left">
-      <img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="YouTube logo" class="logo">
-    </div>
-    <div class="header-center">
-      <input type="text" placeholder="Hledat">
-      <button class="search-btn"><i class="fa fa-search"></i></button>
-    </div>
-    <div class="header-right">
-      <button><i class="fa fa-bell"></i></button>
-      <button><i class="fa fa-video"></i></button>
-      <button><i class="fa fa-user"></i></button>
-    </div>
-  </header>
-
-  <div class="main">
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><i class="fa fa-home"></i> Domů</li>
-          <li><i class="fa fa-bolt"></i> Shorts</li>
-          <li><i class="fa fa-tv"></i> Odběry</li>
-          <li><i class="fa fa-book"></i> Knihovna</li>
-        </ul>
-      </nav>
-    </aside>
-
-    <section class="videos">
-      <div class="video">
-        <img src="https://via.placeholder.com/320x180" alt="Miniatura">
-        <h3>Název videa</h3>
-        <p>Autor • 1,2 mil. zhlédnutí • před 2 dny</p>
-      </div>
-      <div class="video">
-        <img src="https://via.placeholder.com/320x180" alt="Miniatura">
-        <h3>Další video</h3>
-        <p>Autor • 532 tis. zhlédnutí • před 5 dny</p>
-      </div>
-    </section>
+  <div id="loader">
+    <div class="spinner"></div>
   </div>
-
-  <script src="script.js"></script>
+  <div class="container">
+    <h1>DarkRP</h1>
+    <p>Připoj se na náš FiveM Roleplay server a začni svůj příběh ještě dnes.</p>
+    <div class="buttons">
+      <a href="https://discord.gg/tvujserver" target="_blank">Připojit se na Discord</a>
+      <a href="fivem://connect/tvojeip:port">Připojit se na server</a>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 DarkRP Server. Všechna práva vyhrazena.
+  </footer>
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
