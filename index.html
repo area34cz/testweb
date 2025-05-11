@@ -6,6 +6,7 @@
   <title>DarkRP</title>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" type="image/png">
   <style>
+    /* General Styles */
     * {
       margin: 0;
       padding: 0;
@@ -17,7 +18,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0a0f1a;
       color: #fff;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     body::before {
@@ -34,33 +35,48 @@
       filter: brightness(0.3);
     }
 
-    #loader {
+    /* Navbar */
+    nav {
+      background-color: #1b263b;
+      padding: 1rem;
       position: fixed;
-      z-index: 9999;
+      width: 100%;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: #0a0f1a;
+      z-index: 100;
+    }
+
+    nav .logo {
+      color: #66b2ff;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    nav ul {
       display: flex;
-      align-items: center;
       justify-content: center;
+      gap: 2rem;
+      list-style: none;
     }
 
-    .spinner {
-      border: 6px solid #1b263b;
-      border-top: 6px solid #66b2ff;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
+    nav ul li {
+      text-align: center;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
+    nav ul li a:hover {
+      color: #66b2ff;
+    }
+
+    /* Main Content */
     .container {
       height: 100vh;
       display: flex;
@@ -68,7 +84,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 2rem;
+      padding-top: 80px; /* Space for navbar */
       opacity: 0;
       animation: fadeIn 1s forwards 0.5s;
     }
@@ -113,6 +129,23 @@
       background-color: #5599dd;
     }
 
+    /* Sections */
+    section {
+      padding: 3rem;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      color: #66b2ff;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #e0e8f0;
+    }
+
     footer {
       position: absolute;
       bottom: 0;
@@ -125,9 +158,19 @@
   </style>
 </head>
 <body>
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">DarkRP</div>
+    <ul>
+      <li><a href="index.html">Domů</a></li>
+      <li><a href="rules.html">Pravidla</a></li>
+      <li><a href="team.html">Tým</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
   <div class="container">
     <h1>DarkRP</h1>
     <p>Připoj se na náš FiveM Roleplay server a začni svůj příběh ještě dnes.</p>
@@ -136,9 +179,28 @@
       <a href="fivem://connect/tvojeip:port">Připojit se na server</a>
     </div>
   </div>
+
+  <!-- New Sections -->
+  <section>
+    <h2>Novinky</h2>
+    <p>Zjisti všechny nové aktualizace a novinky o našem serveru. Pravidelně přidáváme nové funkce a vylepšení!</p>
+  </section>
+
+  <section>
+    <h2>O serveru</h2>
+    <p>DarkRP je FiveM Roleplay server zaměřený na realistický zážitek. Staň se součástí našeho světa, kde můžeš být kýmkoliv.</p>
+  </section>
+
+  <section>
+    <h2>FAQ</h2>
+    <p>Máte otázky? Podívejte se na naše časté dotazy a získejte rychlé odpovědi na vaše problémy.</p>
+  </section>
+
+  <!-- Footer -->
   <footer>
     &copy; 2025 DarkRP Server. Všechna práva vyhrazena.
   </footer>
+
   <script>
     window.addEventListener('load', () => {
       setTimeout(() => {
